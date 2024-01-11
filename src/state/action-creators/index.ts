@@ -18,7 +18,7 @@ export const searchPKGs = (term: string) => {
           },
         }
       );
-      const names = data.object.map((result: any) => result.package.name);
+      const names = data.objects.map((result: any) => result.package.name);
       dispatch({
         type: ActionType.SEARCH_PKGS_SUCCESS,
         payload: names,

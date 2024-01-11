@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { actionCreators } from '../state/';
+import { useActions } from '../hooks/useActions';
+import { useSelector } from 'react-redux'; // similar to mapStateToProps
 
 const PKGsList: React.FC = () => {
   const [term, setTerm] = useState('');
-  const dispatch = useDispatch();
+  const { searchPKGs } = useActions();
+  const { data, error, loading } = useSelector((state: any) => state.PKGs);
+  console.log({ data, error, loading });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    dispatch(actionCreators.searchPKGs(term) as any);
+    searchPKGs(term);
   };
   return (
     <div>

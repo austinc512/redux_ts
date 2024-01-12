@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useActions } from '../hooks/useActions';
-import { useSelector } from 'react-redux'; // similar to mapStateToProps
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
 const PKGsList: React.FC = () => {
   const [term, setTerm] = useState('');
   const { searchPKGs } = useActions();
-  const { data, error, loading } = useSelector((state: any) => state.PKGs);
+  const { data, error, loading } = useTypedSelector((state) => state.PKGs);
   console.log({ data, error, loading });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

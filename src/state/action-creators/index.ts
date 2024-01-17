@@ -3,6 +3,8 @@ import { Dispatch } from 'redux';
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
+import 'redux-thunk';
+
 export const searchPKGs = (term: string) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({

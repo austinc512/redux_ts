@@ -20,7 +20,12 @@ export const searchPKGs = (term: string) => {
           },
         }
       );
-      const names = data.objects.map((result: any) => result.package.name);
+      const names = data.objects.map((result: any) => {
+        const name = result.package.name;
+        const description = result.package.description;
+        const { npm, homepage, repository } = result.package.links;
+        return { name, description, npm, homepage, repository };
+      });
       dispatch({
         type: ActionType.SEARCH_PKGS_SUCCESS,
         payload: names,

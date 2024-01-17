@@ -1,4 +1,5 @@
 import { ActionType } from '../action-types';
+import { APIResponse } from '../helperTypes/';
 
 interface SearchPKGsAction {
   type: ActionType.SEARCH_PKGS;
@@ -6,7 +7,7 @@ interface SearchPKGsAction {
 
 interface SearchPKGsSuccessAction {
   type: ActionType.SEARCH_PKGS_SUCCESS;
-  payload: string[];
+  payload: APIResponse[];
 }
 
 interface SearchPKGsErrorAction {

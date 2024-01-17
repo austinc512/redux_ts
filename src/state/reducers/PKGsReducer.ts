@@ -1,5 +1,6 @@
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
+import { APIResponse } from '../helperTypes/';
 /*
 This import statement takes advantage of the implicit index file resolution. 
 When you import from a directory (in this case, ../actions) without specifying 
@@ -11,7 +12,7 @@ this statement will correctly import the Action type from it.
 interface PKGsState {
   loading: boolean;
   error: string | null;
-  data: string[];
+  data: APIResponse[];
 }
 
 const initialState = {

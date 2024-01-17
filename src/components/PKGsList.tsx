@@ -7,11 +7,12 @@ const PKGsList: React.FC = () => {
   const { searchPKGs } = useActions();
   const { data, error, loading } = useTypedSelector((state) => state.PKGs);
   console.log({ data, error, loading });
-
+  
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchPKGs(term);
   };
+  // { name, description, npm, homepage, repository }
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>
@@ -29,7 +30,21 @@ const PKGsList: React.FC = () => {
       {!error 
       && !loading 
       && data.map(element => {
-        return <div key={element}>{element}</div>
+        return <div key={element.name} className='box'>
+          <h2>{element.name}</h2>
+          <h3>{element.description}</h3>
+          <p>
+
+           <a href={element.npm}>Link to NPM</a>
+          <br />
+            <a href={element.npm}>Homepage</a>
+          <br />
+            <a href={element.repository}>Repository</a>
+          </p>
+          <p></p>
+          <p></p>
+          <p></p>
+          </div>
       })
       
       }

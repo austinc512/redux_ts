@@ -4,10 +4,10 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 
 const PKGsList: React.FC = () => {
   const [term, setTerm] = useState('');
+  const [colorMap, setColorMap] = useState<{ [key: string]: string }>({});
   const { searchPKGs } = useActions();
   const { data, error, loading } = useTypedSelector((state) => state.PKGs);
-  const [colorMap, setColorMap] = useState<{ [key: string]: string }>({});
-  // console.log({ data, error, loading });
+  // console.log({ data, error, loading }); // keeping this for rendering testing
 
   const colors = ['#ff0066', '#0066ff', '#00b36b', '#e60000', '#e6e600', '#ff99ff', '#ff8c1a'];
 

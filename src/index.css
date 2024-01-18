@@ -1,5 +1,7 @@
 html {
   background-color: black;
+  /* background-image: linear-gradient(90deg, black , #004d2e); */
+  
 }
 
 body {
@@ -9,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
@@ -20,20 +23,19 @@ h1, h2, h3, h4, p {
   color: white;
 }
 
-h1, h2, h3, h4 {
+h2, h3, h4 {
   font-weight: 400;
 }
 
 
 h1 {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 3.5em;
-  margin-left: 1%
+  margin-left: 12%
 }
 
 h2 {
   font-size: 3em;
-  font-weight: 400;
 }
 
 h3 {
@@ -45,16 +47,73 @@ p {
 }
 
 .box {
-  border: 1px solid  #404040
-  ;
+  border: 1px solid  #262626;
   width: 50%;
-  border-radius: 2px;
-  margin: 1% auto;
-  /* background-color: #0d0d0d; */
-  background-image: linear-gradient(to right, black , #1a1a1a);
+  border-radius: 10px;
+  margin: 3% auto;
+  background-image: linear-gradient(70deg, black , #262626);
+  word-wrap: break-word;
 }
 
 .box > * {
   margin: 5%;
   
+}
+
+.link-button {
+  border: none;
+  display: block;
+  color: #e6e6e6;
+  background-color: #1a1a1a;
+  font-size: 1.1em;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px 7px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.search-button {
+  border: none;
+  color: #e6e6e6;
+  background-color: #1a1a1a;
+  font-size: 1.1em;
+  border-radius: 3px;
+  padding: 5px 7px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.link-button:hover{
+  background-color: #002966;
+  color: white;
+  cursor: pointer;
+}
+
+form {
+  /* margin: 0 auto;
+  text-align: center; */
+  display: flex;
+  /* align-items: center; */
+  /* margin: 0 auto;
+  text-align: center; */
+  justify-content: center;
+}
+
+.messages {
+  text-align: center;
+}
+
+input {
+  color: #cccccc;
+  background-color: black;
+  border: 1px solid gray;
+  height: 2em;
+  font-weight: 400;
+  border-radius: 5px;
+  width: 20%
+}
+
+input:focus {
+  background-color: #1a1a1a;
+  border: 1px solid #666666;
+  outline: none;
 }
